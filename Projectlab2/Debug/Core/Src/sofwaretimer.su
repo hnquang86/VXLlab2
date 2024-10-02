@@ -1,0 +1,2 @@
+sofwaretimer.c:12:6:setTimer1	16	static
+sofwaretimer.c:17:6:timerRun	4	static
