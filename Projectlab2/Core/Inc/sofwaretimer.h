@@ -8,9 +8,12 @@
 #ifndef INC_SOFWARETIMER_H_
 #define INC_SOFWARETIMER_H_
 #include "main.h"
-extern int timer1_flag;
+extern int timer1_Flag;
+extern int timerLED_Flag;
+extern int timerLED_Counter;
 
 void setTimer1(int duration);
+void setTimerLED(int duration);
 void timerRun();
 
 
