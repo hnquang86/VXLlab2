@@ -10,7 +10,7 @@ int timer1_Counter = 0;
 int timer1_Flag = 0;
 
 void setTimer1(int duration){
-	timer1_Counter = duration;
+	timer1_Counter = duration / 10;
 	timer1_Flag = 0;
 }
 

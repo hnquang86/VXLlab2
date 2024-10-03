@@ -1,2 +1,2 @@
-7segment.c:10:6:setDigit	16	static
-7segment.c:20:6:display7SEG	16	static
+7segment.c:22:6:setDigit	16	static
+7segment.c:32:6:display7SEG	16	static
