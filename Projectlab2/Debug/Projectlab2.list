@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   000089c9  00000000  00000000  00020035  2**0
+ 12 .debug_info   00008a8b  00000000  00000000  00020035  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001767  00000000  00000000  000289fe  2**0
+ 13 .debug_abbrev 00001767  00000000  00000000  00028ac0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000988  00000000  00000000  0002a168  2**3
+ 14 .debug_aranges 00000990  00000000  00000000  0002a228  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000008c0  00000000  00000000  0002aaf0  2**3
+ 15 .debug_ranges 000008c8  00000000  00000000  0002abb8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001661a  00000000  00000000  0002b3b0  2**0
+ 16 .debug_macro  0001661a  00000000  00000000  0002b480  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a0ca  00000000  00000000  000419ca  2**0
+ 17 .debug_line   0000a0fa  00000000  00000000  00041a9a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008200d  00000000  00000000  0004ba94  2**0
+ 18 .debug_str    0008203b  00000000  00000000  0004bb94  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cdaa1  2**0
+ 19 .comment      00000053  00000000  00000000  000cdbcf  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000026a0  00000000  00000000  000cdaf4  2**2
+ 20 .debug_frame  000026c4  00000000  00000000  000cdc24  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -77,10 +77,10 @@ Disassembly of section .text:
  8000148:	08001e0c 	.word	0x08001e0c
 
 0800014c <setDigit>:
-    {0, 0, 0, 1, 1, 1, 1},  // 7
-    {0, 0, 0, 0, 0, 0, 0},  // 8
-    {0, 0, 0, 0, 1, 0, 0}   // 9
-};
+
+ const int MAX_LED = 4;
+ int index_led = 0;
+ int led_buffer[4] = {1, 2, 3, 4};
 
 void setDigit(int digit){
  800014c:	b580      	push	{r7, lr}
