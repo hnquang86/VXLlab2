@@ -95,7 +95,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-setTimer1(500);
+setTimer1(250);
+setTimerLED(1000);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -105,7 +106,11 @@ setTimer1(500);
 		if(index_led >= MAX_LED){
 			index_led = 0;
 		}
-		setTimer1(500);
+		setTimer1(250);
+	}
+	if(timerLED_Flag == 1){
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+		setTimerLED(1000);
 	}
     /* USER CODE BEGIN 3 */
   }
