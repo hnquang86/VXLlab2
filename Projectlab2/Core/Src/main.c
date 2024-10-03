@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "sofwaretimer.h"
+#include "7segment.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

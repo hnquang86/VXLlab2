@@ -7,6 +7,20 @@
 
 #include "7segment.h"
 
+
+ const uint8_t digits[10][7]= {
+    {0, 0, 0, 0, 0, 0, 1},  // 0
+    {1, 0, 0, 1, 1, 1, 1},  // 1
+    {0, 0, 1, 0, 0, 1, 0},  // 2
+    {0, 0, 0, 0, 1, 1, 0},  // 3
+    {1, 0, 0, 1, 1, 0, 0},  // 4
+    {0, 1, 0, 0, 1, 0, 0},  // 5
+    {0, 1, 0, 0, 0, 0, 0},  // 6
+    {0, 0, 0, 1, 1, 1, 1},  // 7
+    {0, 0, 0, 0, 0, 0, 0},  // 8
+    {0, 0, 0, 0, 1, 0, 0}   // 9
+};
+
 void setDigit(int digit){
     HAL_GPIO_WritePin(SEG0_GPIO_Port, SEG0_Pin, digits[digit][0] ? GPIO_PIN_SET : GPIO_PIN_RESET);
     HAL_GPIO_WritePin(SEG1_GPIO_Port, SEG1_Pin, digits[digit][1] ? GPIO_PIN_SET : GPIO_PIN_RESET);
