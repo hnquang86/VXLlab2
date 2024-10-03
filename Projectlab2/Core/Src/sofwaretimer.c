@@ -11,15 +11,15 @@ int timer1_Flag = 0;
 int timerLED_Counter = 0;
 int timerLED_Flag = 0;
 int hour = 15 , minute = 8 , second = 50;
-
+int TIMER_CYCLE = 10;
 
 void setTimer1(int duration){
-	timer1_Counter = duration / 10;
+	timer1_Counter = duration / TIMER_CYCLE;
 	timer1_Flag = 0;
 }
 
 void setTimerLED(int duration){
-	timerLED_Counter =  duration / 10;
+	timerLED_Counter =  duration / TIMER_CYCLE;
 	timerLED_Flag =  0;
 }
 
