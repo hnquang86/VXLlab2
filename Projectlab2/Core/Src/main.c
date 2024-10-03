@@ -95,25 +95,41 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-setTimer1(250);
-setTimerLED(1000);
+ int hour = 15 , minute = 8 , second = 50;
+
+ void updateClockBuffer() {
+     led_buffer[0] = hour / 10;
+     led_buffer[1] = hour % 10;
+     led_buffer[2] = minute / 10;
+     led_buffer[3] = minute % 10;
+ }
   while (1)
   {
     /* USER CODE END WHILE */
+	  second ++;
+	  if (second >= 60) {
+		  second = 0;
+		  minute ++;
+	  }
+	  if( minute >= 60) {
+		  minute = 0;
+		  hour ++;
+	  }
+	  if( hour >=24) {
+		  hour = 0;
+	   }
+	  updateClockBuffer();
+	  update7SEG(index_led++);
+	  if(index_led >= MAX_LED){
+		  index_led = 0;
+	  }
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+	  HAL_Delay (1000) ;
+	}
 
-	if(timer1_Flag == 1){
-		update7SEG(index_led++);
-		if(index_led >= MAX_LED){
-			index_led = 0;
-		}
-		setTimer1(250);
-	}
-	if(timerLED_Flag == 1){
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
-		setTimerLED(1000);
-	}
+
     /* USER CODE BEGIN 3 */
-  }
+
   /* USER CODE END 3 */
 }
 

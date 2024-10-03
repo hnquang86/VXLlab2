@@ -10,6 +10,9 @@ int timer1_Counter = 0;
 int timer1_Flag = 0;
 int timerLED_Counter = 0;
 int timerLED_Flag = 0;
+int hour = 15 , minute = 8 , second = 50;
+
+
 void setTimer1(int duration){
 	timer1_Counter = duration / 10;
 	timer1_Flag = 0;

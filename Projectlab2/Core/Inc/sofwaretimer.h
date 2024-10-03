@@ -11,10 +11,8 @@
 extern int timer1_Flag;
 extern int timerLED_Flag;
 extern int timerLED_Counter;
-
 void setTimer1(int duration);
 void setTimerLED(int duration);
 void timerRun();
-
 
 #endif /* INC_SOFWARETIMER_H_ */
