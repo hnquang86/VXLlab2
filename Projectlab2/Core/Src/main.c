@@ -103,30 +103,38 @@ int main(void)
      led_buffer[2] = minute / 10;
      led_buffer[3] = minute % 10;
  }
- setTimer1(1000);
+ setTimer1(250);
+ setTimerLED(1000);
   while (1)
   {
     /* USER CODE END WHILE */
 		  if(timer1_Flag == 1){
-			  second ++;
-			  if (second >= 60) {
-				  second = 0;
-				  minute ++;
-			  }
-			  if( minute >= 60) {
-				  minute = 0;
-				  hour ++;
-			  }
-			  if( hour >=24) {
-				  hour = 0;
-			   }
+
+
 			  updateClockBuffer();
 			  update7SEG(index_led++);
 			  if(index_led >= MAX_LED){
 				  index_led = 0;
 			  }
-		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
-		  setTimer1(1000);
+			  setTimer1(250);
+
+		  }
+		  if(timerLED_Flag == 1){
+			  second ++;
+				if (second >= 60) {
+					second = 0;
+					minute ++;
+				}
+				if( minute >= 60) {
+					minute = 0;
+					hour ++;
+				}
+				if( hour >=24) {
+					hour = 0;
+				}
+			  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+
+			  setTimerLED(1000);
 		  }
   	  }
 
